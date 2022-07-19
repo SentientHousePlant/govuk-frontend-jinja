@@ -2,7 +2,7 @@
 
 {% set blockLevel = not params.attributes and (params.next or params.previous) %}
 
-<nav class="govuk-pagination {% if params.classes %} {{ params.classes }}{% endif %} {% if blockLevel%} " govuk-pagination--block" {% endif %}" role="navigation" aria-label="{{ params.landmarkLabel | default("results") }} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {%endfor%}">
+<nav class="govuk-pagination {% if params.classes %} {{ params.classes }}{% endif %} {% if blockLevel%} " govuk-pagination--block" {% endif %}" role="navigation" aria-label="{{ params.landmarkLabel | default("results") }} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {%endfor%}>
 
   {% if params.previous and params.previous.href %}
 
@@ -11,9 +11,9 @@
         <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
           <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
         </svg>
-        {# <span class="govuk-pagination__link-title {%- if blockLevel and not (params.next and params.next.labelText) %} " govuk-pagination__link-title--decorated"  {% endif %} ">
+        <span class="govuk-pagination__link-title {%- if blockLevel and not (params.next and params.next.labelText) %} " govuk-pagination__link-title--decorated"  {% endif %} ">
           {{ params.previous.text | default("Previous") }}
-        </span>  #}
+        </span>
 
         {% if params.previous.labelText and blockLevel %}
           <span class="govuk-visually-hidden">:</span>
@@ -67,6 +67,7 @@
       </a>
     </div>
   {% endif %}
+
 </nav>
 
 {% endmacro %}
