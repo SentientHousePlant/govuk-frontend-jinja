@@ -14,7 +14,6 @@
         <span class="govuk-pagination__link-title {%- if blockLevel and not (params.next and params.next.labelText) %} " govuk-pagination__link-title--decorated"  {% endif %} ">
           {{ params.previous.text | default("Previous") }}
         </span>
-
         {% if params.previous.labelText and blockLevel %}
           <span class="govuk-visually-hidden">:</span>
           <span class="govuk-pagination__link-label">{{ params.previous.labelText }}</span>
