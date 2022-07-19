@@ -48,7 +48,7 @@
         {% if blockLevel %}
           {{ nextArrow | safe }}
         {% endif %}
-        <span class="govuk-pagination__link-title {%- if blockLevel and not params.next.labelText} {{' govuk-pagination__link-title--decorated'}} {% endif %}">
+        <span class="govuk-pagination__link-title {%- if blockLevel and not params.next.labelText %} {{' govuk-pagination__link-title--decorated'}} {% endif %}">
           {{ params.next.text | default("Next") }}
         </span>
         {% if params.next.labelText and blockLevel %}
