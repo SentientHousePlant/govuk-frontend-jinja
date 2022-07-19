@@ -24,10 +24,10 @@
     </div>
   {% endif %}
 
-  {% if params.items %}
+  {% if params['items'] %}
     <ul class="govuk-pagination__list">
 
-      {% for item in params.items %}
+      {% for item in params['items'] %}
 
         {% if item.ellipsis %}
           <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
