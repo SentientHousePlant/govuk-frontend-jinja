@@ -23,7 +23,7 @@
     </div>
   {% endif %}
 
-  {% if params.get('items', []) == [] %}
+  {% comment %} {% if params.get('items', []) == [] %}
     <ul class="govuk-pagination__list">
 
       {% for item in params.get('items', []) %}
@@ -39,7 +39,7 @@
         {% endif %}
       {% endfor %}
     </ul>
-  {% endif %}
+  {% endif %} {% endcomment %}
 
   {% comment %} {% if params.next and params.next.href %}
     {% set nextArrow %}
