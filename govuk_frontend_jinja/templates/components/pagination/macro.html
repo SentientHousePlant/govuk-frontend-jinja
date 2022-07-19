@@ -25,7 +25,7 @@
       {% for item in params.items %}
         {% if item.ellipsis %}
           <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
-        {% elseif item.number %}
+        {% elif item.number %}
           <li class="govuk-pagination__item {{- ' govuk-pagination__item--current' if item.current }}">
             <a class="govuk-link govuk-pagination__link" href="{{ item.href }}" aria-label="{{ item.visuallyHiddenText | default("Page " + item.number) }}" {%- if item.current %} aria-current="page" {%- endif -%} {%- for attribute, value in item.attributes %} {{ attribute }}="{{ value }}" {%- endfor -%}>
               {{ item.number }}
@@ -63,4 +63,4 @@
   {% endif %}
 </nav>
 
-{% endmacro %}
+{% endmacro%}
