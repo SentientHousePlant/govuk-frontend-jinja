@@ -50,7 +50,7 @@
     {% endset %}
 
     <div class="govuk-pagination__next">
-      <a class="govuk-link govuk-pagination__link" href="{{ params.next.href }}" rel="next" {%- for attribute, value in params.next.items() %} {{ attribute }}="{{ value }}" {% endfor %}>
+      <a class="govuk-link govuk-pagination__link" href="{{ params.next.href }}" rel="next" {%- for attribute, value in (params.next.attributes.items() if params.next.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {% endfor %}>
         {% if blockLevel %}
           {{ nextArrow | safe }}
         {% endif %}
