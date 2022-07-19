@@ -1,4 +1,4 @@
-{macro pagination(params) }
+{% macro pagination(params) %}
 
 {% set blockLevel = not params.items and (params.next or params.previous) %}
 
@@ -63,4 +63,4 @@
   {% endif %}
 </nav>
 
-{% endmacro%}
+{% endmacro %}
