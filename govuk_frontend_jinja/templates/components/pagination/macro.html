@@ -2,7 +2,7 @@
 
 {% set blockLevel = not params.attributes and (params.next or params.previous) %}
 
-<nav class="govuk-pagination {% if params.classes %} {{ params.classes }}{% endif %} {% if blockLevel %} " govuk-pagination--block" {% endif %}" role="navigation" aria-label="{{ params.landmarkLabel | default("results") }} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {%endfor%}>
+<nav class="govuk-pagination {% if params.classes %} {{ params.classes }}{% endif %} {% if blockLevel %} " govuk-pagination--block" {% endif %}" role="navigation" aria-label="{{ params.landmarkLabel | default("results") }} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {% endfor %}>
 
   {% if params.previous and params.previous.href %}
 
