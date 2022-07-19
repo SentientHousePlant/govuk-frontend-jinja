@@ -4,7 +4,8 @@
 
 <nav class="govuk-pagination {% if params.classes %} {{ params.classes }}{% endif %} {% if blockLevel %} " govuk-pagination--block" {% endif %}" role="navigation" aria-label="{{ params.landmarkLabel | default("results") }} {%- for attribute, value in (params.attributes.items() if params.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {% endfor %}>
 
-  {% if params.previous and params.previous.href %}
+{#
+{% if params.previous and params.previous.href %}
 
     <div class="govuk-pagination__prev">
       <a class="govuk-link govuk-pagination__link" href="{{ params.previous.href }}" rel="prev" {%- for attribute, value in (params.previous.attributes.items() if params.previous.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {% endfor %}>
@@ -21,7 +22,8 @@
 
       </a>
     </div>
-  {% endif %}
+{% endif %}
+#}
 
   {# {% if params.get('items', []) == [] %}
     <ul class="govuk-pagination__list">
