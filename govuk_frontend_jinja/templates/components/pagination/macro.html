@@ -29,7 +29,7 @@
           <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
         {%- elif item.number -%}
           <li class="govuk-pagination__item {{- ' govuk-pagination__item--current' if item.current }}">
-            <a class="govuk-link govuk-pagination__link" href="{{ item.href }}" aria-label="{{ item.visuallyHiddenText | default("Page " + item.number) }}" {%- if item.current %} aria-current="page" {%- endif -%} {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {%- endfor -%}>
+            <a class="govuk-link govuk-pagination__link" href="{{ item.href }}" aria-label="{{ item.visuallyHiddenText | default("Page " ~ item.number) }}" {%- if item.current %} aria-current="page" {%- endif -%} {%- for attribute, value in (item.attributes.items() if item.attributes else {}.items()) %} {{ attribute }}="{{ value }}" {%- endfor -%}>
               {{ item.number }}
             </a>
           </li>
