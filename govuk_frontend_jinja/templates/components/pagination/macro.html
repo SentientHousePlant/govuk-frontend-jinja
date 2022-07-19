@@ -24,7 +24,7 @@
     </div>
   {% endif %}
 
-  {% if 'items' in params %}
+  {% if params.get('items', []) == [] %}
     <ul class="govuk-pagination__list">
 
       {% for item in params.get('items', []) %}
